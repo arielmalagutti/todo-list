@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 0px 0px;
+  gap: 64px;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 88px;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+}
+
+p {
+  font-size: 48px;
+  font-family: "Inter", sans-serif;
+}
+
+.todo-input-wrapper,
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  width: 1200px;
+}
+
+.todo-input {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  color: #454545;
+  border: none;
+  padding: 14px 24px;
+  background: #f1f1f1;
+  box-shadow: 2px 2px 4px rgba(66, 81, 135, 0.25);
+  border-radius: 10px;
+  flex-grow: 1;
+}
+
+.buttons {
+  display: flex;
+  gap: 18px;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 2px 2px 4px rgba(66, 81, 135, 0.25);
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: #3bb128;
+  padding: 14px 54.5px;
+}
+
+.btn-add:disabled {
+  background-color: #359426;
+  cursor: not-allowed;
+}
+
+.btn-actions {
+  background-color: #07456c;
+  font-size: 48px;
+  padding: 8px 32px;
+}
+
+.todo-edit {
+  resize: none;
+}
+
+.todo-edit::-webkit-scrollbar {
+  width: 0px;
+}
+
+mat-icon {
+  width: 48px;
+  height: 48px;
+  font-size: inherit;
+}
