@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Todo } from './todo.model';
+
+interface ITodoProps {
+  value: string;
+  onEdit: boolean;
+}
 
 @Component({
   selector: 'app-root',
@@ -8,7 +12,7 @@ import { Todo } from './todo.model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  todos: Todo[] = [];
+  todos: ITodoProps[] = [];
 
   ngOnInit() {
     const existingTodos = localStorage.getItem('todos');
@@ -17,7 +21,7 @@ export class AppComponent implements OnInit {
 
   addTodo(form: NgForm, todoInput: HTMLInputElement) {
     if (form.value.todoInput !== '') {
-      const todo = new Todo(form.value.todoInput, false);
+      const todo: ITodoProps = { value: form.value.todoInput, onEdit: false };
       this.todos.push(todo);
       localStorage.setItem('todos', JSON.stringify(this.todos));
       todoInput.value = '';
