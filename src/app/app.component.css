@@ -82,6 +82,14 @@ button {
   padding: 8px 32px;
 }
 
+.btn-actions.confirm {
+  background-color: #3bb128;
+}
+
+.btn-actions.clear {
+  background-color: #b12828;
+}
+
 .todo-edit {
   resize: none;
 }

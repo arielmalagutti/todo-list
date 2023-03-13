@@ -31,30 +31,25 @@
         #tarea
       ></textarea>
       <div class="buttons">
-        <button class="btn-actions" (click)="editTodo(i)" *ngIf="!todo.onEdit">
-          <mat-icon class="icon">edit</mat-icon>
-        </button>
-        <button
-          class="btn-actions"
-          (click)="deleteTodo(i)"
-          *ngIf="!todo.onEdit"
-        >
-          <mat-icon class="icon">delete_forever</mat-icon>
-        </button>
-        <button
-          class="btn-actions"
-          *ngIf="todo.onEdit"
-          (click)="confirmEdit(tarea.value, i)"
-        >
-          <mat-icon class="icon">done_outline</mat-icon>
-        </button>
-        <button
-          class="btn-actions"
-          (click)="cancelEdit(tarea, i)"
-          *ngIf="todo.onEdit"
-        >
-          <mat-icon class="icon">clear</mat-icon>
-        </button>
+        <ng-template [ngIf]="!todo.onEdit">
+          <button class="btn-actions" (click)="editTodo(i)">
+            <mat-icon class="icon">edit</mat-icon>
+          </button>
+          <button class="btn-actions" (click)="deleteTodo(i)">
+            <mat-icon class="icon">delete_forever</mat-icon>
+          </button>
+        </ng-template>
+        <ng-template [ngIf]="todo.onEdit">
+          <button
+            class="btn-actions confirm"
+            (click)="confirmEdit(tarea.value, i)"
+          >
+            <mat-icon class="icon">done_outline</mat-icon>
+          </button>
+          <button class="btn-actions clear" (click)="cancelEdit(tarea, i)">
+            <mat-icon class="icon">clear</mat-icon>
+          </button>
+        </ng-template>
       </div>
     </div>
   </div>
